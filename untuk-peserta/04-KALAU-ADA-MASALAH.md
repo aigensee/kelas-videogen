@@ -62,18 +62,19 @@ mencabutnya di yorai.id, membuat kunci baru, lalu menggantinya di
 .env.local dan di Vercel (kalau sudah online).
 ```
 
-**Video gagal dibuat terus**
+**Hasil gagal dibuat terus (video, gambar, atau suara)**
 
 ```
-Video selalu gagal dibuat. Cek penyebabnya dari pesan error Yorai tanpa
-membuat video baru dulu, jelaskan ke aku, lalu sarankan pengaturan yang
-lebih aman (model, durasi, resolusi).
+Hasil <video/gambar/suara> selalu gagal dibuat. Cek penyebabnya dari pesan
+error Yorai tanpa membuat hasil baru dulu, jelaskan ke aku, lalu sarankan
+pengaturan yang lebih aman (model, durasi, resolusi, atau panjang teks).
 ```
 
 **Waktu tinggal sedikit dan aku masih tertinggal**
 
 ```
 Mode kilat: waktu kelas tinggal sedikit. Selesaikan versi paling sederhana
-yang bisa dipakai (composer, tombol Buat, kartu hasil, unduh), tunda sisanya
+yang bisa dipakai (composer, tombol Buat, kartu hasil, unduh) untuk satu
+jenis hasil yang paling aku butuhkan dulu, tunda jenis lain dan sisanya
 sebagai "Nanti" di AGENTS.md, lalu lanjut ke tahap berikutnya.
 ```

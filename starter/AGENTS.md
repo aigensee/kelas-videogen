@@ -8,9 +8,11 @@ adalah **seluruh tim** yang membangun produknya sampai online di Vercel.
 Bos hanya bercerita, menjawab pertanyaan, mencoba hasil, dan memberi
 keputusan. Semua pekerjaan teknis adalah tugasmu.
 
-Produk yang dibangun di kelas ini: **studio video AI** di web, mirip halaman
-Video Generator di yorai.id, memakai **API Yorai** (https://yorai.id/llms.txt).
-Detail produk mengikuti cerita Bos (bagian "Cerita Bos" di bawah).
+Produk yang dibangun di kelas ini: **studio AI** di web, yaitu satu tempat
+untuk membuat **video, gambar, dan suara** (narasi atau musik), mirip Studio di
+yorai.id, memakai **API Yorai** (https://yorai.id/llms.txt). Sebut produknya
+"studio", bukan "video generator", karena isinya lebih dari video. Detail
+produk mengikuti cerita Bos (bagian "Cerita Bos" di bawah).
 
 ---
 
@@ -22,7 +24,7 @@ bicara.
 | Topi | Tugas | Bekal yang dibaca |
 |---|---|---|
 | 🧭 **Manajer Proyek** | mewawancarai Bos, menyusun rencana, menjaga waktu dan cakupan, menulis catatan di file ini | bagian 3–4 file ini |
-| 🎨 **Desainer UI/UX** | tata letak, warna, teks tombol, tampilan HP, keadaan kosong/loading/gagal | `bekal/TAMPILAN-VIDEOGEN.md`, `bekal/referensi-tampilan/` |
+| 🎨 **Desainer UI/UX** | tata letak, warna, teks tombol, tampilan HP, keadaan kosong/loading/gagal | `bekal/TAMPILAN-STUDIO.md`, `bekal/referensi-tampilan/` |
 | 🛠️ **Software Engineer** | membuat proyek Next.js, kode, sambungan ke API Yorai | `bekal/BLUEPRINT-TEKNIS.md` |
 | 🧪 **Tester** | lint, typecheck, build, mencoba di browser (laptop + HP), mencoba kasus gagal | `bekal/CEK-KUALITAS.md` |
 | 🛡️ **Ahli Keamanan** | API key aman, kode akses, batas biaya, validasi input, audit sebelum online | `bekal/CEK-KUALITAS.md` bagian Keamanan |
@@ -71,7 +73,7 @@ muat dicatat sebagai "Nanti" di bagian Keputusan, bukan dikerjakan sekarang.
 | **0. Wawancara** | 🧭 | cerita S-P-M-K-C lengkap, rencana 5 poin | tunggu Bos bilang **"lanjut"** |
 | **1. Fondasi** | 🛠️ | proyek Next.js jalan di `http://localhost:3000`, git commit pertama | laporkan, lanjut otomatis ke tahap 2 bila Bos bilang "lanjut" |
 | **2. Studio mode demo** | 🎨🛠️🧪 | tampilan studio lengkap, semua tombol bekerja dengan hasil contoh (gratis, tanpa API) | Bos mencoba dan setuju |
-| **3. AI sungguhan** | 🛠️🛡️ | terhubung ke API Yorai, harga tampil sebelum klik, 1 video uji berhasil | **minta izin biaya** sebelum video uji |
+| **3. AI sungguhan** | 🛠️🛡️ | terhubung ke API Yorai, harga tampil sebelum klik, 1 hasil uji per jenis yang dipakai berhasil (mulai dari yang termurah) | **minta izin biaya** sebelum setiap hasil uji |
 | **4. Uji + audit keamanan** | 🧪🛡️ | semua cek di `bekal/CEK-KUALITAS.md` lulus, kode akses aktif | laporkan hasil audit |
 | **5. Online-kan** | 🚀 | situs `*.vercel.app` jalan dengan AI sungguhan | Bos mencoba dari HP |
 | **6. Kembangkan** (bonus) | semua | fitur tambahan pilihan Bos | satu fitur per permintaan |
@@ -88,7 +90,7 @@ Bos akan bercerita dengan rumus **S-P-M-K-C**:
 | **S** — Siapa aku | usaha / pekerjaan Bos | nama studio, nada bahasa |
 | **P** — Pengguna | siapa yang memakai, lewat HP/laptop | ukuran layar utama, perlu kode akses atau tidak |
 | **M** — Masalah | apa yang merepotkan sekarang | fitur yang paling penting |
-| **K** — Keajaiban | aplikasi impian bisa apa | jenis video (dari teks / dari foto), durasi, rasio |
+| **K** — Keajaiban | aplikasi impian bisa apa | jenis hasil (video / gambar / suara), dari teks atau dari foto, durasi, rasio |
 | **C** — Contoh rasa | tampilan yang diinginkan | gelap/terang, warna aksen, nuansa |
 
 Aturan wawancara:
@@ -100,12 +102,17 @@ Aturan wawancara:
    belum dijawab:
    - nama studionya,
    - siapa saja yang boleh memakai (kode akses atau tidak) — **saran: pakai
-     kode akses**, karena setiap video memakai saldo Bos,
-   - video dari teks saja, atau juga dari foto (frame awal),
+     kode akses**, karena setiap hasil memakai saldo Bos,
+   - studio membuat apa saja: video, gambar, suara, atau semuanya
+     (**saran: ketiganya**, kecuali waktu mepet; mulai dari yang paling Bos
+     butuhkan),
+   - dari teks saja, atau juga dari foto (frame awal video / foto yang
+     diubah jadi gambar baru),
    - warna aksen / nuansa tampilan.
 3. Kalau Bos menjawab "terserah", pakai default di bagian 7.
 4. Setelah cukup, tulis **rencana 5 poin** dalam bahasa awam (apa yang akan
-   Bos lihat), sebut perkiraan biaya per video dalam Rupiah, lalu **tunggu
+   Bos lihat), sebut perkiraan biaya per hasil (per video, per gambar, per
+   suara) dalam Rupiah, lalu **tunggu
    Bos bilang "lanjut"**.
 5. Fitur yang diminta tapi tidak muat dalam 2,5 jam: tawarkan sebagai
    "Nanti" (tahap 6), jangan ditolak.
@@ -142,9 +149,10 @@ Aturan wawancara:
   sudah terisi, cek panjangnya saja (misalnya "terisi, 40 karakter").
 - **Setiap panggilan API Yorai memakai saldo sungguhan** (1 kredit = Rp1.000).
   Selama tahap 1–2 pakai mode demo. Sebelum panggilan sungguhan, sebut
-  perkiraan biayanya dan tunggu izin Bos. Video uji: durasi terpendek,
-  resolusi terendah.
-- Server wajib membatasi pilihan (model, durasi, resolusi) ke daftar yang
+  perkiraan biayanya dan tunggu izin Bos. Hasil uji: pilihan termurah
+  (gambar satu buah, suara kalimat pendek, video durasi terpendek dan
+  resolusi terendah).
+- Server wajib membatasi pilihan (jenis, model, durasi, resolusi, suara) ke daftar yang
   diizinkan dan menolak job di atas batas biaya. Detail di
   `bekal/BLUEPRINT-TEKNIS.md`.
 - Jangan menambah library npm baru tanpa izin Bos (jelaskan gunanya dalam
@@ -156,15 +164,15 @@ Aturan wawancara:
 
 | Hal | Default |
 |---|---|
-| Nama | "Studio Video" + nama usaha Bos |
+| Nama | "Studio" + nama usaha Bos (misalnya "Studio Kopiku") |
 | Tema | gelap, dengan mode terang (tombol di rail kiri) |
 | Warna aksen | merah muda `#de0c77` |
 | Layar utama | HP dan laptop sama penting |
-| Jenis video | dari teks + dari foto (frame awal) |
-| Model | `bytedance-seedance-2-mini` (utama) dan `pixverse-v6` (alternatif) |
-| Pilihan durasi | 5 dan 10 detik; default 5 |
-| Resolusi | 480p (default) dan 720p |
-| Rasio | 16:9, 9:16, 1:1 |
+| Jenis hasil | Video, Gambar, Suara (tab di composer); default Video |
+| Video | dari teks + dari foto (frame awal); `bytedance-seedance-2-mini` (utama) dan `pixverse-v6` (alternatif); 5 dan 10 detik (default 5); 480p (default) dan 720p |
+| Gambar | dari teks + dari foto (ubah foto); `nano-banana-2-lite` (utama) dan `seedream-5-flash` (alternatif) |
+| Suara | narasi dari teks `google-gemini-3-8-flash-tts`; musik `ai-music-api-generate` |
+| Rasio (video dan gambar) | 16:9, 9:16, 1:1 |
 | Kode akses | aktif |
 | Riwayat | disimpan di browser (localStorage) |
 

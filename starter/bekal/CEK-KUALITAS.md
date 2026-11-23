@@ -16,26 +16,31 @@ merah.
 
 Kalau kamu bisa membuka browser (Antigravity), lakukan sendiri dan ambil
 screenshot. Kalau tidak bisa (Codex), uji route dengan `curl` ke
-`http://localhost:3000/api/...` dan minta Bos mencoba langkah 1–9 di
+`http://localhost:3000/api/...` dan minta Bos mencoba langkah 1–11 di
 browsernya, satu per satu.
 
 Ukuran laptop (1440×900) **dan** HP (390×844):
 
 1. Halaman terbuka tanpa error di console.
 2. Keadaan kosong tampil; klik chip contoh mengisi composer.
-3. Popover pengaturan terbuka/tertutup (klik, Esc, klik di luar); ringkasan
+3. Ganti jenis Video / Gambar / Suara di composer → placeholder, slot foto,
+   isi popover, dan ringkasan di pill ikut berubah.
+4. Popover pengaturan terbuka/tertutup (klik, Esc, klik di luar); ringkasan
    di pill berubah sesuai pilihan.
-4. Harga di tombol Buat berubah saat durasi/resolusi diubah.
-5. Buat video → kartu "Mengantre" → "Sedang dibuat" → berhasil (demo ±15
-   detik).
-6. Prompt berisi kata "gagal" (mode demo) → kartu gagal dengan pesan ramah
+5. Harga di tombol Buat berubah saat pengaturan diubah (durasi/resolusi
+   video, model gambar, panjang teks narasi).
+6. Untuk **setiap jenis** yang aktif: Buat → kartu "Mengantre" → "Sedang
+   dibuat" → berhasil (demo ±15 detik untuk video, ±8 detik untuk gambar dan
+   suara). Kartu suara bisa diputar.
+7. Prompt berisi kata "gagal" (mode demo) → kartu gagal dengan pesan ramah
    dan tombol Coba lagi.
-7. Pilih foto frame awal → thumbnail tampil → bisa dihapus → video dibuat
-   dengan mode foto.
-8. Muat ulang halaman → riwayat masih ada; job yang belum selesai lanjut
-   dicek.
-9. Unduh, Pakai lagi, Hapus, viewer (Esc menutup), tombol tema.
-10. Tidak ada scroll ke samping di HP; composer tidak menutupi kartu
+8. Pilih foto (frame awal video / foto acuan gambar) → thumbnail tampil →
+   bisa dihapus → hasil dibuat dengan mode foto.
+9. Muat ulang halaman → riwayat semua jenis masih ada; job yang belum
+   selesai lanjut dicek.
+10. Unduh (nama file dan ekstensinya benar per jenis), Pakai lagi, Hapus,
+    viewer (Esc menutup), tab filter per jenis, tombol tema.
+11. Tidak ada scroll ke samping di HP; composer tidak menutupi kartu
     terakhir.
 
 ## C. Kasus nakal (tahap 4)
@@ -69,8 +74,9 @@ Jalankan dan laporkan setiap butir sebagai ✅/❌:
    `/api/file/<id>`.
 6. Kode akses salah → 401 dengan jeda; benar → cookie `HttpOnly` dan
    `SameSite=Lax` (cek header `Set-Cookie`).
-7. Kirim `modelId` asing, `duration: 15`, `resolution: "1080p"` lewat curl →
-   ditolak 400 (server tidak percaya pilihan dari browser).
+7. Kirim `modelId` asing, `duration: 15`, `resolution: "1080p"`, `voice`
+   asing, atau `modelId` gambar dengan `kind: "video"` lewat curl → ditolak
+   400 (server tidak percaya pilihan dari browser).
 8. Biaya di atas `MAX_CREDITS_PER_JOB` → ditolak sebelum job dibuat.
 9. `id` bukan UUID di `/api/jobs/` dan `/api/file/` → 400.
 10. Header keamanan ada di respons halaman utama
@@ -84,6 +90,7 @@ Jalankan dan laporkan setiap butir sebagai ✅/❌:
 
 1. Buka URL `*.vercel.app` → layar kode akses tampil.
 2. Kode akses benar → studio tampil, lencana **Mode demo tidak muncul**.
-3. Satu video uji termurah (dengan izin Bos) berhasil dan bisa diputar serta
-   diunduh di HP.
+3. Satu hasil uji termurah (dengan izin Bos, misalnya satu gambar) berhasil
+   dan bisa dibuka serta diunduh di HP. Bila studio punya video atau suara,
+   pastikan juga bisa diputar di HP.
 4. `curl -X POST https://<url>/api/generate` tanpa cookie → 401.

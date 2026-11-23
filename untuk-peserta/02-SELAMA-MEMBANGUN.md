@@ -39,10 +39,14 @@ nama dan warna studioku. Masih mode demo dulu.
 
 Coba hal-hal ini, lalu sampaikan yang kurang dengan bahasamu:
 
-☐ Ketik ide video → klik **Buat** → muncul kartu "sedang dibuat" → jadi.
-☐ Klik pill pengaturan di composer → pilih rasio, durasi, kualitas.
-☐ Harga di tombol Buat berubah saat durasi diganti.
-☐ Pasang foto sebagai **frame awal**.
+☐ Pilih **Video**, **Gambar**, atau **Suara** di atas kolom ketik.
+☐ Ketik ide → klik **Buat** → muncul kartu "sedang dibuat" → jadi. Coba
+   untuk setiap jenis.
+☐ Klik pill pengaturan di composer → pilih rasio, durasi, kualitas, atau
+   suara pembaca.
+☐ Harga di tombol Buat berubah saat pengaturan diganti.
+☐ Pasang foto sebagai **frame awal** video atau **foto acuan** gambar.
+☐ Putar hasil suara.
 ☐ Muat ulang halaman → hasilnya masih ada.
 ☐ Buka di HP (minta AI: *"tunjukkan cara membukanya di HP-ku"*) atau
    perkecil jendela browser.
@@ -53,6 +57,7 @@ Contoh masukan yang baik:
 - *"Di HP, tulisan di kartu kepotong."*
 - *"Warna cokelatnya terlalu gelap, buat lebih hangat."*
 - *"Tambahkan contoh prompt tentang kopi di layar kosong."*
+- *"Aku tidak butuh musik, cukup narasi saja."*
 
 Kalau sudah puas: **"simpan, lalu lanjut ke tahap 3"**.
 
@@ -71,10 +76,12 @@ Kalau sudah puas: **"simpan, lalu lanjut ke tahap 3"**.
    > kuncinya di https://yorai.id/app/api dan buat yang baru.
 
 4. Nyalakan share screen lagi bila diminta pengajar.
-5. AI menyebut perkiraan biaya video uji (±Rp2.000). Kalau setuju, ketik
-   **"boleh, buat satu video uji"**.
-6. Tunggu 1–3 menit. Video sungguhan pertamamu jadi! 🎉 Bagikan
-   tangkapan layarnya (bukan kuncinya) di chat meeting.
+5. AI menyebut perkiraan biaya hasil uji, mulai dari yang termurah (gambar
+   ±Rp400, suara ±Rp100, video ±Rp2.000). Kalau setuju, ketik
+   **"boleh, buat hasil uji"**.
+6. Tunggu sebentar (gambar dan suara beberapa detik, video 1–3 menit). Hasil
+   sungguhan pertamamu jadi! 🎉 Bagikan tangkapan layarnya (bukan kuncinya)
+   di chat meeting.
 
 ## Tahap 4 — Uji dan audit keamanan (±10 menit)
 
@@ -98,6 +105,8 @@ Contoh permintaan:
 
 - *"Tambahkan tombol bantu tulis prompt dari ide singkat."*
 - *"Tambahkan model video lain yang lebih bagus untuk produk."*
+- *"Tambahkan tombol untuk menjadikan gambar sebagai video."*
+- *"Tambahkan musik dengan lirik buatanku sendiri."*
 - *"Tambahkan tombol bagikan ke WhatsApp."*
 
 ---

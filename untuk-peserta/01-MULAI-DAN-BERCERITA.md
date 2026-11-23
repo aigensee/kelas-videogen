@@ -7,8 +7,9 @@ Hari ini kamu tidak belajar ngoding. Kamu belajar **memimpin tim AI**.
 - **AI = seluruh tim.** Manajer proyek, desainer, programmer, tester, ahli
   keamanan, sampai orang yang menayangkan aplikasimu ke internet.
 
-Hasil akhirnya: **studio video AI milikmu sendiri** (mirip Video Generator di
-yorai.id) yang bisa dibuka dari HP siapa pun lewat link `.vercel.app`.
+Hasil akhirnya: **studio AI milikmu sendiri** untuk membuat video, gambar,
+dan suara (mirip Studio di yorai.id), yang bisa dibuka dari HP siapa pun
+lewat link `.vercel.app`.
 
 ---
 
@@ -85,9 +86,9 @@ Ceritakan idemu seperti curhat ke teman. Supaya tim AI cepat paham, sebut
 |---|---|---|
 | **S** — Siapa aku | Apa usaha / pekerjaanku? | "Aku punya usaha kopi susu kekinian di Bandung, namanya Kopiku." |
 | **P** — Pengguna | Siapa yang akan memakai aplikasinya, lewat apa? | "Aku dan 2 admin media sosialku, kebanyakan lewat HP." |
-| **M** — Masalah | Apa yang merepotkan sekarang? | "Tiap minggu butuh video pendek untuk Reels/TikTok, tapi sewa videografer mahal dan lama." |
-| **K** — Keajaiban | Andai ada aplikasi ajaib, ia bisa apa? | "Ketik ide videonya atau unggah foto produk, lalu jadi video 5–10 detik yang siap diunggah, vertikal untuk Reels." |
-| **C** — Contoh rasa | Tampilannya ingin seperti apa? | "Seperti Video Generator di yorai.id: gelap, elegan, rapi. Warna aksen cokelat kopi." |
+| **M** — Masalah | Apa yang merepotkan sekarang? | "Tiap minggu butuh video pendek, foto promo, dan suara narasi untuk Reels/TikTok, tapi sewa videografer dan desainer mahal dan lama." |
+| **K** — Keajaiban | Andai ada aplikasi ajaib, ia bisa apa? | "Ketik ide atau unggah foto produk, lalu jadi video 5–10 detik vertikal, gambar promo, atau suara narasi yang siap diunggah." |
+| **C** — Contoh rasa | Tampilannya ingin seperti apa? | "Seperti Studio di yorai.id: gelap, elegan, rapi. Warna aksen cokelat kopi." |
 
 Ketik ceritamu di chat agen. **Kalimat pembukanya selalu sama**, lalu
 lanjutkan dengan ceritamu:
@@ -104,11 +105,12 @@ Contoh pesan lengkap:
 >
 > Aku punya usaha kopi susu kekinian di Bandung, namanya Kopiku. Yang akan
 > memakai aplikasinya aku dan 2 admin sosmedku, kebanyakan dari HP. Masalahku,
-> tiap minggu butuh video pendek untuk Reels dan TikTok, tapi videografer
-> mahal dan lama. Aku ingin aplikasi yang cukup diketik idenya atau diunggah
-> foto produknya, lalu langsung jadi video 5–10 detik vertikal yang siap
-> diunggah. Tampilannya seperti Video Generator di yorai.id: gelap, elegan,
-> rapi, dengan warna aksen cokelat kopi.
+> tiap minggu butuh video pendek, foto promo, dan suara narasi untuk Reels
+> dan TikTok, tapi videografer dan desainer mahal dan lama. Aku ingin studio
+> yang cukup diketik idenya atau diunggah foto produknya, lalu langsung jadi
+> video 5–10 detik vertikal, gambar promo, atau suara narasi yang siap
+> diunggah. Tampilannya seperti Studio di yorai.id: gelap, elegan, rapi,
+> dengan warna aksen cokelat kopi.
 
 Belum punya ide? Isi [LEMBAR-CERITA.md](LEMBAR-CERITA.md) dulu di aplikasi
 catatan, lalu salin ke chat agen.
@@ -125,7 +127,8 @@ Contohnya:
 Jawab cukup **a** atau **b**, atau dengan kata-katamu sendiri. Kalau bingung,
 ketik **"terserah kamu"** dan AI memakai pilihan yang disarankan.
 
-Setelah itu AI menulis **rencana 5 poin** dan perkiraan biaya per video.
+Setelah itu AI menulis **rencana 5 poin** dan perkiraan biaya per hasil
+(per video, per gambar, per suara).
 Kalau setuju, ketik:
 
 ```

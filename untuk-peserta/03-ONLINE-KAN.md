@@ -55,7 +55,8 @@ supaya AI bisa mengeceknya.
 
 1. Buka alamat situsmu di HP.
 2. Masukkan kode akses.
-3. Buat satu video. (Memakai saldo Yorai, ±Rp2.000.)
+3. Buat satu hasil, misalnya satu gambar. (Memakai saldo Yorai: gambar
+   ±Rp400, video ±Rp2.000.)
 4. Kirim link situsmu di chat meeting supaya teman-teman mencobanya. Kode
    aksesnya kirim lewat pesan pribadi saja, atau beri kode akses khusus
    untuk demo lalu ganti setelah kelas.

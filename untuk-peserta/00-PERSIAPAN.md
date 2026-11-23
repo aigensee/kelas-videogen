@@ -16,9 +16,10 @@ urutannya. Centang ☐ kalau sudah.
    Buka https://vercel.com/signup, pilih **Hobby**, lalu **Continue with
    GitHub**.
 
-☐ **Yorai** — penyedia AI pembuat video.
+☐ **Yorai** — penyedia AI pembuat video, gambar, dan suara.
    1. Daftar di https://yorai.id.
-   2. Isi saldo minimal **Rp20.000** (cukup untuk 4–8 video uji).
+   2. Isi saldo minimal **Rp20.000** (cukup untuk beberapa video uji atau
+      puluhan gambar dan suara uji).
    3. Buka https://yorai.id/app/api → **Buat kunci API** → beri nama
       `kelas`. Salin kuncinya ke aplikasi catatan pribadi (Notes/Keep).
       Kunci hanya tampil **sekali**.
@@ -76,6 +77,7 @@ urutannya. Centang ☐ kalau sudah.
 - Matikan notifikasi (chat, email) supaya tidak ikut terlihat saat share
   screen.
 - Kunci API Yorai di catatan pribadi.
-- Satu ide singkat: **video apa yang ingin dibuat oleh aplikasimu, untuk
+- Satu ide singkat: **studiomu membuat apa (video, gambar, suara), untuk
   siapa?** (Lihat [01-MULAI-DAN-BERCERITA.md](01-MULAI-DAN-BERCERITA.md).)
-- Opsional: 1–2 foto produk/karakter untuk dicoba dijadikan video.
+- Opsional: 1–2 foto produk/karakter untuk dicoba dijadikan video atau
+  gambar baru.

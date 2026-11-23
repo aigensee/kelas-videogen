@@ -17,8 +17,9 @@ akses?)
 
 > ............................................................................
 
-**K — Keajaiban** (andai aplikasinya ajaib: dari teks? dari foto? berapa
-detik? untuk Reels/TikTok/YouTube?)
+**K — Keajaiban** (andai studionya ajaib: membuat video, gambar, suara,
+atau semuanya? dari teks? dari foto? berapa detik? untuk
+Reels/TikTok/YouTube/katalog?)
 
 > ............................................................................
 
@@ -37,9 +38,10 @@ sifat: elegan/ceria/minimalis)
 
 | Siapa | Keajaiban yang diminta |
 |---|---|
-| Penjual kue rumahan | foto kue → video 5 detik kue berputar dengan uap hangat |
-| Guru TK | ide cerita → video animasi pendek untuk pembuka kelas |
-| Agen properti | foto rumah → video jalan pelan menyusuri ruangan |
-| Komunitas UMKM | studio bersama dengan kode akses untuk anggota |
-| Kreator konten horor | teks cerita rakyat → video sinematik vertikal |
+| Penjual kue rumahan | foto kue → video 5 detik kue berputar dengan uap hangat, plus foto katalog berlatar rapi |
+| Guru TK | ide cerita → gambar ilustrasi + narasi dongeng untuk pembuka kelas |
+| Agen properti | foto rumah → video jalan pelan menyusuri ruangan, dengan narasi |
+| Komunitas UMKM | studio bersama dengan kode akses untuk anggota: poster, video, jingle |
+| Kreator konten horor | teks cerita rakyat → video sinematik vertikal + suara narator yang mencekam |
 | Pemilik bengkel | foto motor → video promo servis dengan suara mesin |
+| Pemilik kafe | deskripsi suasana → musik latar instrumental untuk diputar di toko |

@@ -65,7 +65,7 @@ GitHub macet lebih dari 10 menit, pindah ke **Jalur B**.
 | "Kode akses belum diatur" | `APP_PASSCODE` kosong | isi lalu Redeploy |
 | "Kunci API salah" | key salah ketik/dicabut | buat key baru di yorai.id/app/api, ganti, Redeploy |
 | "Saldo tidak cukup" | saldo Yorai habis | Bos mengisi saldo di yorai.id |
-| Video tidak bisa diputar | proxy file tidak meneruskan `Range` atau mem-buffer | perbaiki `/api/file/[id]` (blueprint bagian 6) |
+| Video atau suara tidak bisa diputar | proxy file tidak meneruskan `Range` atau mem-buffer | perbaiki `/api/file/[id]` (blueprint bagian 6) |
 | Push ditolak (`rejected`) | ada commit di GitHub yang tidak ada di lokal | `git pull --rebase` lalu push; **jangan** `--force` |
 
 Vercel paket **Hobby** gratis untuk proyek pribadi/non-komersial. Untuk
