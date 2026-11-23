@@ -13,6 +13,14 @@ cerita Bos yang menang, selama aturan keamanan di `AGENTS.md` tetap terpenuhi.
   Setelah instalasi, baca panduan yang relevan di
   `node_modules/next/dist/docs/` sebelum menulis route atau konfigurasi.
 
+### Jangan menimpa `next.config.ts`
+
+Di Next.js terbaru, `next.config.ts` bawaan berisi pengaturan penting
+(misalnya `cacheComponents` dan sambungan Tailwind lewat `turbopack.rules`).
+**Tambahkan** pengaturan baru (misalnya `headers()`) ke objek yang ada; jangan
+menulis ulang filenya. Bila tampilan tiba-tiba tanpa gaya atau build
+memperingatkan `Unknown at rule: @theme`, berarti sambungan Tailwind hilang.
+
 ### Membuat proyek di folder yang sudah berisi file
 
 Folder ini sudah berisi `AGENTS.md`, `.agents/`, dan `bekal/`, sehingga
@@ -20,15 +28,16 @@ Folder ini sudah berisi `AGENTS.md`, `.agents/`, dan `bekal/`, sehingga
 
 1. Buat di subfolder sementara, misalnya
    `npx create-next-app@latest tmp-app --ts --tailwind --eslint --app --src-dir --use-npm --import-alias "@/*" --yes`.
-2. Pindahkan semua isi `tmp-app/` (termasuk file berawalan titik) ke folder
-   utama, **kecuali** `AGENTS.md`, `CLAUDE.md`, dan `README.md` milik
-   `tmp-app`. Kalau `AGENTS.md` dari `tmp-app` berisi blok aturan Next.js,
+2. Hapus `tmp-app/.git` (riwayat git bawaan create-next-app), lalu pindahkan
+   semua isi `tmp-app/` (termasuk file berawalan titik) ke folder utama,
+   **kecuali** `AGENTS.md`, `CLAUDE.md`, dan `README.md` milik `tmp-app`. Kalau `AGENTS.md` dari `tmp-app` berisi blok aturan Next.js,
    salin blok itu ke **bagian paling atas** `AGENTS.md` kita, jangan menimpa
    isi lainnya.
 3. Hapus `tmp-app/`, jalankan `npm install` bila perlu, lalu
    `npm run dev` dan pastikan `http://localhost:3000` terbuka.
-4. Pastikan `.gitignore` memuat `.env*` (kecuali `.env.example`),
-   `node_modules`, `.next`, `.vercel`. Lalu `git init` (bila belum) dan commit
+4. Pastikan `.gitignore` memuat `.env*` **dan** baris `!.env.example`
+   (bawaan create-next-app ikut mengabaikan `.env.example`), `node_modules`,
+   `.next`, `.vercel`. Lalu `git init` (bila belum) dan commit
    pertama: `Mulai proyek studio video`.
 
 ## 2. Arsitektur
@@ -149,7 +158,10 @@ Perkiraan untuk Bos (cek ulang dengan `/quote`, harga bisa berubah):
 ## 5. Route server
 
 Semua route kecuali `login` dan `status` **wajib mengecek sesi** (bagian 7).
-Semua route memakai `export const runtime = "nodejs"`.
+Route berjalan di Node.js secara bawaan. **Jangan** menambah
+`export const runtime = …`: Next.js terbaru dengan `cacheComponents` menolak
+build bila ada baris itu. Di route dinamis, `params` berupa Promise
+(`const { id } = await ctx.params`).
 
 | Route | Gunanya |
 |---|---|

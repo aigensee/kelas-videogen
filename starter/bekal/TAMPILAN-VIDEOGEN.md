@@ -2,27 +2,44 @@
 
 Targetnya: rasa seperti **Video Generator di yorai.id** (gaya "Flow"):
 layar hasil yang lega, composer melayang di bawah, pengaturan di popover.
-Tiru **tata letak dan nuansa**, bukan logo atau nama Yorai/PosterKu. Pakai
+Tiru **tata letak dan nuansa**, bukan logo atau nama Yorai, dan bukan nama "Kopiku" dari screenshot. Pakai
 nama studio Bos dari `AGENTS.md`. Boleh ada teks kecil "Ditenagai API Yorai"
 di pengaturan atau footer.
 
-Screenshot acuan ada di `bekal/referensi-tampilan/` (dari contoh aplikasi
-"PosterKu Studio" yang meniru Yorai). Buka dan lihat gambarnya sebelum
-membuat tampilan:
+Screenshot acuan ada di `bekal/referensi-tampilan/`. Semuanya diambil dari
+studio contoh "Studio Kopiku" yang dibangun persis dari dokumen ini (mode demo,
+aksen `#de0c77`). Buka dan lihat gambarnya sebelum membuat tampilan:
 
 | File | Yang ditiru |
 |---|---|
-| `01-studio-grid.jpg` | tata letak utama: rail kiri, topbar, tab, grid hasil, composer melayang |
-| `02-studio-kosong.jpg` | keadaan kosong + contoh prompt |
-| `03-popover-pengaturan.jpg` | popover pengaturan: model, rasio, durasi, kualitas |
-| `05-kartu-progres.jpg` | kartu yang sedang diproses |
+| `01-studio-grid.jpg` | tata letak utama: rail kiri, topbar, tab, grid masonry, composer melayang |
+| `02-studio-kosong.jpg` | keadaan kosong + chip contoh prompt |
+| `03-popover-pengaturan.jpg` | popover pengaturan: model, rasio, durasi, resolusi, suara |
+| `04-kartu-gagal.jpg` | kartu gagal + tab "Gagal" |
+| `05-kartu-progres.jpg` | kartu yang sedang diproses + pesan batas 3 video |
 | `06-viewer.jpg` | tampilan detail satu hasil |
 | `07-tema-terang.jpg` | mode terang |
 | `08-hp-390px.jpg` | tampilan HP |
+| `09-hp-pengaturan.jpg` | pengaturan di HP sebagai lembar dari bawah |
+| `10-kode-akses.jpg` | layar kode akses (dengan pesan salah) |
 
-(`04-prompt-otomatis.jpg` hanya untuk bonus "Bantu tulis prompt".)
+**Aturan prioritas:** nama studio, teks contoh, dan warna aksen di screenshot
+hanyalah contoh ("Kopiku"). Pakai nama, contoh prompt, dan warna dari cerita
+Bos. Bila gambar dan teks dokumen ini berbeda, **ikuti teks dokumen ini**.
+Gambar kotak berwarna di kartu adalah hasil mode demo, bukan desain kartu.
+
+**Jangan** menambah gradien dekoratif, efek kaca buram (glassmorphism) di
+luar topbar, emoji sebagai ikon, ilustrasi, atau library UI. Tampilan harus
+netral dan tenang; warna hanya dari token di bawah, aksen hanya untuk tombol
+utama, pilihan aktif, sakelar, dan bar progres.
 
 ## Warna (token CSS di `globals.css`)
+
+**Nama kelas CSS:** proyek memakai Tailwind, jadi jangan memberi nama kelas
+buatan sendiri yang sama dengan kelas Tailwind (`grid`, `flex`, `hidden`,
+`block`, `container`, `columns-*`, dan sejenisnya). Contoh: pakai `.gallery`,
+bukan `.grid`, untuk grid hasil; kalau tidak, grid berubah jadi satu kolom
+besar.
 
 Gelap adalah bawaan; terang lewat tombol tema. Simpan pilihan tema di
 `localStorage`.
@@ -48,10 +65,10 @@ dan popover.
 │◆ │ Nama Studio                     [Mode demo] [Saldo] [⋯] │ topbar 56px
 │▦ ├──────────────────────────────────────────────────────────┤
 │  │ [Semua 9] [Berhasil] [Diproses]                          │
-│  │ ┌────────┐ ┌────────┐ ┌────────┐                         │
-│  │ │ video  │ │ video  │ │ video  │   grid masonry 3 kolom  │
-│  │ │        │ └────────┘ │        │   (CSS columns)         │
-│☀ │ └────────┘            └────────┘                         │
+│  │ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐                     │
+│  │ │video │ │video │ │video │ │video │ grid masonry 4 kolom│
+│  │ │      │ └──────┘ │      │ │      │ (CSS columns)       │
+│☀ │ └──────┘          └──────┘ └──────┘                     │
 │🔒│      ┌───────────────────────────────────────┐           │
 │  │      │ [+ Frame awal]                         │ composer │
 │  │      │ Apa yang ingin kamu buat?              │ melayang │
@@ -66,7 +83,9 @@ dan popover.
 - **Topbar**: nama studio (kata kedua tebal), di kanan lencana "Mode demo"
   (bila demo) dan sisa saldo (bila tersedia), semuanya kecil dan redup.
 - **Tab filter** dalam satu kotak `surface-2` dengan angka jumlah.
-- **Grid**: masonry 3 kolom, jarak 16px, kartu mengikuti rasio videonya.
+- **Grid**: masonry dengan CSS `columns`: 4 kolom di layar ≥ 1280px, 3 kolom
+  di 1024–1279px, 2 kolom di bawahnya; jarak 16px, kartu mengikuti rasio
+  videonya.
   Beri ruang kosong di bawah grid setinggi composer supaya kartu terakhir
   tidak tertutup.
 - **Composer**: `position: sticky/fixed` di bawah tengah, lebar
